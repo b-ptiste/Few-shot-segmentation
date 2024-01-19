@@ -96,8 +96,9 @@ def main(argv):
             "kernel_sources": [],
             "model_sources": []
         }
+        #TODO: set wandb_flag to True the following line when we setup wandb for this project (create wandb project and connect it to the repo)
         prepare_notebook((kernel_path/nb_id).with_suffix(".ipynb"), exp_id, branch,
-                        git_user=GIT_USER, git_repo=GIT_REPO, wandb_flag=not args.no_wandb)
+                        git_user=GIT_USER, git_repo=GIT_REPO, wandb_flag=False)
         assert (kernel_path/nb_id).with_suffix(".ipynb").exists()
         with open(kernel_path/"kernel-metadata.json", "w") as f:
             json.dump(config, f, indent=4)
