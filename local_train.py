@@ -7,7 +7,8 @@ from pathlib import Path
 
 WANDB_AVAILABLE = False
 try:
-    WANDB_AVAILABLE = True
+    #TODO: set to True the following line when we setup wandb for this project (create wandb project and connect it to the repo)
+    WANDB_AVAILABLE = False
     import wandb
 except ImportError:
     logging.warning("Could not import wandb. Disabling wandb.")
